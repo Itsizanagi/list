@@ -1,0 +1,37 @@
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+int main(){
+    int i;
+    list<int> vetor;
+    list<int>::iterator iter;
+
+    int tam = 10;
+    for(i=0;i<tam;i++){
+        vetor.push_back(i);
+    }
+    
+    iter = vetor.begin();
+    advance(iter, 7); // add valor em alguma posicao da lista
+
+    
+    vetor.insert(iter, 11);
+
+    cout << "Tamanho da lista: " << vetor.size() << endl;
+    cout << "primeiro elemento: " << vetor.front() << endl;
+    cout << "ultimo elemento: " << vetor.back() << endl;
+
+    tam = vetor.size();
+    for(i=0;i<tam;i++){
+        cout << vetor.front() << endl;
+        vetor.pop_front();
+    }
+
+    cout << "Tamanho da lista: " << vetor.size() << endl; 
+
+    system("pause");
+    system("cls");
+    return 0;
+}
